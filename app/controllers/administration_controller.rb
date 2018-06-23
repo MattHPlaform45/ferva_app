@@ -1,2 +1,3 @@
-class AdministrationController < ApllicationContoller 
+class AdministrationController < ApllicationContoller
+  
 end
