@@ -1,0 +1,7 @@
+h1 All Users
+
+ul
+  - @users.each do |user|
+    p = link_to "#{user.first_name} #{user.last_name}", admin_user_path(user.id)
+
+h2 = link_to "add a new user", new_user_invitation_path
