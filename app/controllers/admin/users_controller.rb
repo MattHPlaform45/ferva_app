@@ -13,13 +13,17 @@ class Admin::UsersController < AdministrationController
     redirect admin_new_user_path
   end
 
-  def create
-    binding.pry
-    User.invite!({email: user_params}, current_user)
+  def edit
+    @user = User.find(params[:id])
   end
 
+  def update
+    @user = User.find(params[:id])
+    @user.update user_params
+    redirect_to admin_users_path(@user.id)
+  end
 private
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:first_name, :last_name, :email)
   end
 end
