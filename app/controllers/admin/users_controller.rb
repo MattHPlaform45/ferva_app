@@ -10,7 +10,6 @@ class Admin::UsersController < AdministrationController
 
   def new
     @user = User.new
-    redirect admin_new_user_path
   end
 
   def edit
