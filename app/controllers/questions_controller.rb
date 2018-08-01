@@ -16,7 +16,8 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to @question, notice: "successfully created new Question"
+      redirect_to admin_assessment_path(@question.assessment_id), notice: "successfully created new Question"
+      # redirect_to @question, notice: "successfully created new Question"
     else
       render 'new'
     end

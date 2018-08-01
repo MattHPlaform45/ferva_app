@@ -5,7 +5,7 @@ class Admin::AssessmentsController < AdministrationController
   end
 
   def show
-    @asessment = Assessment.find(params[:id])
+    @assessment = Assessment.find(params[:id])
   end
 
   def new
@@ -36,7 +36,7 @@ class Admin::AssessmentsController < AdministrationController
   end
 
   def assessment_params
-    params.require(:assessment).permit(:title)
+    params.require(:assessment).permit(:title, :description)
   end
 
 
