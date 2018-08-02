@@ -6,6 +6,7 @@ class Admin::AssessmentsController < AdministrationController
 
   def show
     @assessment = Assessment.find(params[:id])
+    @user_assessment = UserAssessment.new
   end
 
   def new

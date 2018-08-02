@@ -10,3 +10,10 @@ h1 = link_to "add new question", new_question_path
 - @assessment.questions.each do |question|
   h2 = question.title
   h4 = question.category.title
+
+
+
+= simple_form_for @user_assessment do |f|
+  = f.input :user_id, collection: User.all.map{|u| [u.first_name, u.id]}
+  = f.input :assessment_id, collection: Assessment.all
+  = f.button :submit
