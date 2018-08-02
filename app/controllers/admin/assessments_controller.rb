@@ -1,7 +1,7 @@
 class Admin::AssessmentsController < AdministrationController
 
   def index
-    @assesments = Assessment.all
+    @assessments = Assessment.all
   end
 
   def show

@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_114336) do
+ActiveRecord::Schema.define(version: 2018_08_02_145211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "result"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_assessment_id"
+    t.integer "assessments_result_id"
+  end
 
   create_table "assessments", force: :cascade do |t|
     t.string "title"
@@ -27,13 +36,7 @@ ActiveRecord::Schema.define(version: 2018_07_31_114336) do
     t.integer "result"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "assessments_users", id: false, force: :cascade do |t|
-    t.bigint "assessment_id", null: false
-    t.bigint "user_id", null: false
-    t.index ["assessment_id", "user_id"], name: "index_assessments_users_on_assessment_id_and_user_id"
-    t.index ["user_id", "assessment_id"], name: "index_assessments_users_on_user_id_and_assessment_id"
+    t.integer "user_assessment_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -54,6 +57,8 @@ ActiveRecord::Schema.define(version: 2018_07_31_114336) do
   create_table "user_assessments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "assessment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

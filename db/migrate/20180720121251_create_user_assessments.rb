@@ -5,7 +5,7 @@ class CreateUserAssessments < ActiveRecord::Migration[5.2]
       t.integer :assessment_id
 
 
-
+      t.timestamps
     end
   end
 end

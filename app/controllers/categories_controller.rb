@@ -32,6 +32,7 @@ class CategoriesController < ApplicationController
   end
 
   private
+  
   def find_category
   end
 

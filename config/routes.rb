@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :assessments
   end
   resources :questions
+  resources :answers
   resources :categories
   resources :user_assessments
+  resources :assessments_results
 end
