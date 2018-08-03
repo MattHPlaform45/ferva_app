@@ -13,6 +13,7 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.secret_key = '70a33149f5875926bdbc1518d7c90c5a1535c06e3f344ec5178313ad821906af465c70b4aa9d0211016fe75c4d2fa61de1b0499816441ad07506af5519d9f29f'
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
