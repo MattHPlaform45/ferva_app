@@ -1,11 +1,21 @@
 class AssessmentsResultsController < ApplicationController
 
   def index
-    @assessments_results = AssessmentsResults.all
+    # @assessments_results = AssessmentsResult.all
   end
 
   def new
     @assessments_result = AssessmentsResult.new
+  end
+
+  def update
+  end
+
+  def show
+    @assessments_result = AssessmentsResult.find(params[:id])
+  end
+
+  def edit
   end
 
   def create

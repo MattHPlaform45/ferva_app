@@ -2,3 +2,12 @@ h1 = "this is #{@user_assessment.user.first_name}'s assessment"
 
 - @questions.each do |question|
   h2 = question.title
+  / - binding.pry
+
+= simple_form_for @result, :url => {:action => "update"} do |f|
+  = f.fields_for :answers do |p|
+    = p.text_field :result
+
+  = f.button :submit, "Create Result"
+
+  / h2 = @user_assessment.assessments_result.answers

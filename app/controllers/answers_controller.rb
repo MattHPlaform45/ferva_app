@@ -4,6 +4,12 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
+  def update
+  end
+
+  def edit
+  end
+
   def create
     @answer = Answer.new(answer_params)
     if @answer.save
