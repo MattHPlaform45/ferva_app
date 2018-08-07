@@ -26,7 +26,6 @@ class UserAssessmentsController < ApplicationController
       params[:assessments_result][:answers_attributes].each { |thing| ids << thing.second['result'] if thing.second['id'] == ans.id.to_s }
       ans.update_columns(result: ids.join(', ').to_i)
     end
-    binding.pry
     redirect_to assessments_result_path(@user_assessment.assessments_result)
   end
 

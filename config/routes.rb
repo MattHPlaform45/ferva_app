@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users, except: :destroy
     resources :assessments
   end
+  root 'pages#home'
   resources :questions
   resources :answers
   resources :categories
