@@ -2,3 +2,14 @@
   h1 = "Question: #{ans.question.title}"
   h1 = "Category: #{ans.question.category.title}"
   h1 = "Answer: #{ans.result}"
+
+
+- Category.all.each do |c|
+  - average = @assessments_result.user_assessment.average_for_category(c)
+  h2 = "Average for #{c.title}"
+  p = average
+  hr
+
+p = @assessments_result.answers.map{|f| f.category_id}.map{|v| @assessments_result.answers.where(category_id: v)}.count
+/ h1 = @assessments_result.answers.count
+/ h2 = @assessments_result.answers.map{|f| f.category_id}

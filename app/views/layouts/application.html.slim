@@ -1,0 +1,27 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title == content_for?(:title) ? yield(:title) : "Untitled"
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "vendor/modernizr"
+    = csrf_meta_tag
+    = csp_meta_tag
+
+  body
+    p.notice
+      = notice
+    p.alert
+      = alert
+
+    == yield
+
+    = javascript_include_tag "application"
+
+
+ssessmentsResult.last.answers.map{ |g| [g.question]}.flatten.map{|u| [u.category_id]}.flatten.uniq.map{|cat| {cat => Question.where(category_id: cat) } }.flatten
+
+AssessmentsResult.last.answers.map{|f| [f.category_id]}.map{|v| Answer.where(category_id: v)}

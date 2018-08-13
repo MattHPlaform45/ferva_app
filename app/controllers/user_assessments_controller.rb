@@ -8,7 +8,7 @@ class UserAssessmentsController < ApplicationController
     if @user_assessment.save
       AssessmentsResult.create(user_assessment_id: @user_assessment.id, result: nil, user_id: @user_assessment.user_id)
       @user_assessment.assessment.questions.each do |question|
-        Answer.create(result: nil, question_id: question.id, user_assessment_id: @user_assessment.id, assessments_result_id: @user_assessment.assessments_result.id)
+        Answer.create(result: nil, question_id: question.id, user_assessment_id: @user_assessment.id, assessments_result_id: @user_assessment.assessments_result.id, category_id: question.category_id)
       end
       redirect_to user_assessment_path(@user_assessment)
     else

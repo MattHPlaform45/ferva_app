@@ -6,7 +6,7 @@ h1 = "this is #{@user_assessment.user.first_name}'s assessment"
 
 = simple_form_for @result, :url => {:action => "update"} do |f|
   = f.fields_for :answers do |p|
-    = p.text_field :result
+    = p.input :result, collection: [['strongly agree', 1], ['agree', 2],['neutral', 3],['disagree', 4],['strongly disagree', 5]] , as: :radio_buttons
 
   = f.button :submit, "Create Result"
 
