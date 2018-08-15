@@ -3,13 +3,31 @@
   h1 = "Category: #{ans.question.category.title}"
   h1 = "Answer: #{ans.result}"
 
-
+- ips_categories = []
 - Category.all.each do |c|
   - average = @assessments_result.user_assessment.average_for_category(c)
   h2 = "Average for #{c.title}"
   p = average
+  - ips_categories << c if average >= 3.0
   hr
 
-p = @assessments_result.answers.map{|f| f.category_id}.map{|v| @assessments_result.answers.where(category_id: v)}.count
+br
+br
+hr
+h2 moves to Ipsative
+br
+- ips_categories.each do |categ|
+  h2 = categ.title
+
+/ - Category.all.each do |c|
+/   - ipsative = @assessments_result.user_assessment.ipsative_for_category(c)
+/   h2 = "ipsative for #{c.title}"
+/   p = ipsative
+/   hr
+
+
+
+
+/ p = @assessments_result.answers.map{|f| f.category_id}.map{|v| @assessments_result.answers.where(category_id: v)}.count
 / h1 = @assessments_result.answers.count
 / h2 = @assessments_result.answers.map{|f| f.category_id}

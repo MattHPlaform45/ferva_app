@@ -19,7 +19,8 @@ gem 'slim', '~> 3.0', '>= 3.0.9'
 gem 'simple_form', '~> 4.0', '>= 4.0.1'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
+#foundation
+gem 'foundation-rails', '~> 6.4', '>= 6.4.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

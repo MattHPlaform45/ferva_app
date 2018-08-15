@@ -1,13 +1,14 @@
 h1 = "this is #{@user_assessment.user.first_name}'s assessment"
 
-- @questions.each do |question|
-  h2 = question.title
-  / - binding.pry
-
+/ - @questions.each do |question|
+/   h2 = question.title
+/   / - binding.pry
 = simple_form_for @result, :url => {:action => "update"} do |f|
-  = f.fields_for :answers do |p|
-    = p.input :result, collection: [['strongly agree', 1], ['agree', 2],['neutral', 3],['disagree', 4],['strongly disagree', 5]] , as: :radio_buttons
+  = f.fields_for :answers do |ff|
+    .grid-x
+      .cell.small-6
+        = ff.object.question.title
+      .cell.small-6
+        = ff.input :result, collection: [['strongly agree', 1], ['agree', 2],['neutral', 3],['disagree', 4],['strongly disagree', 5]] , as: :radio_buttons
 
   = f.button :submit, "Create Result"
-
-  / h2 = @user_assessment.assessments_result.answers
